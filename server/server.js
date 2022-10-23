@@ -8,6 +8,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 require('./config/mongoose.config');
-// TODO require('./routes/-----.routes')(app);
+require('./routes/flashcard.routes')(app);
 
 app.listen(port, () => console.log(`Listening on port : ${port}`));
