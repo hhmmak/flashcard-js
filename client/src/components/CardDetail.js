@@ -15,7 +15,7 @@ const CardDetail = ({card}) => {
         <p>{card.word}</p>
         <Button onClick={flipCard} variant={flip? "danger" : "primary"}>Flip</Button>
         <div>
-          {card.description.split("\n").map( (sentence, index) => 
+          {flip && card.description.split("\n").map( (sentence, index) => 
             <div key={index}>{sentence}</div>
           )}
         </div>
