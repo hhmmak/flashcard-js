@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import CardAdd from './features/card-form/CardAdd';
-import CardEdit from './components/CardEdit';
+import CardEdit from './features/card-form/CardEdit';
 import CardSet from './features/card-display/CardSet';
 
 import Container from 'react-bootstrap/Container';
