@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import CardForm from "./CardForm"
 
 const CardEdit = ({id}) => {
+
+  const navigate = useNavigate();
 
   const[loaded, setLoaded] = useState(false);
   const [card, setCard] = useState({
@@ -13,7 +16,7 @@ const CardEdit = ({id}) => {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/flashcard/${id}`)
+    axios.get(`http://localhost:5000/api/flashcard/${id}`)
     .then( res => {
       setCard(res.data);
       setLoaded(true);
@@ -25,7 +28,7 @@ const CardEdit = ({id}) => {
     axios.put(`http://localhost:8000/api/flashcard/${id}`)
       .then( res => {
         console.log(res);
-        //TODO what to do after edit
+        navigate('/card');
       })
       .catch(err => console.log(err));
   }
