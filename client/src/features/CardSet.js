@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-import CardDetail from "../components/CardDetail";
+import CardDetail from "./card-form/CardDetail";
 
 const CardSet = () => {
 
