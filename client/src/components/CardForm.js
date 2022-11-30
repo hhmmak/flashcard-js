@@ -4,12 +4,17 @@ import Button from 'react-bootstrap/Button';
 const CardForm = ({card, setCard, submitHandler}) => {
 
   const onChangeHandler = (e) => {
-    //TODO setCard
+    setCard({...card, [e.target.name]: e.target.value })
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    submitHandler(card);
   }
 
   return (
     <div>
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={onSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Type</Form.Label>
           <Form.Control type="text" name='type' onChange={onChangeHandler} value={card.type}/>
@@ -20,7 +25,7 @@ const CardForm = ({card, setCard, submitHandler}) => {
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Description</Form.Label>
-          <Form.Control type="text" name='description' onChange={onChangeHandler} value={card.description}/>
+          <Form.Control as="textarea" row={5} name='description' onChange={onChangeHandler} value={card.description}/>
         </Form.Group>
         <Button type="submit">Submit</Button>
       </Form>
