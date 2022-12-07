@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <Container>
+    <Container fluid className='mt-2'>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CardSet />} />
