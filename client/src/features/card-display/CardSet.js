@@ -3,7 +3,10 @@ import axios from 'axios';
 
 import CardDetail from "./CardDetail/CardDetail";
 import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/esm/Button";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const CardSet = () => {
 
@@ -19,10 +22,16 @@ const CardSet = () => {
 
   return (
     <div>
-      <Button onClick={() => nav("./new")}>New Term</Button>
-    { cards.map( (card, index) =>
-      <CardDetail key={index} card={card}/>
-    )}
+      <Button size={"lg"} onClick={() => nav("./new")}>New Term</Button>
+        <Container>
+          <Row>
+          { cards.map( (card, index) =>
+            <Col lg={6}>
+              <CardDetail key={index} card={card}/>
+            </Col>
+          )}
+          </Row>
+        </Container>
     </div>
   )
 }
