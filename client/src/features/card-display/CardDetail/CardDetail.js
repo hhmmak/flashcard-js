@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import styles from './CardDetail.module.css';
 import Button from "react-bootstrap/Button";
 
 const CardDetail = ({card}) => {
@@ -10,7 +12,7 @@ const CardDetail = ({card}) => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
         <p>{card.type}</p>
         <p>{card.word}</p>
         <Button onClick={flipCard} variant={flip? "danger" : "primary"}>Flip</Button>
