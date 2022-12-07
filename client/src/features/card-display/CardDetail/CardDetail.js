@@ -17,10 +17,10 @@ const CardDetail = ({card}) => {
     <Row className={styles.container}>
         <Col>
           <p>{card.type}</p>
-          <p>{card.word}</p>
+          <h2>{card.word}</h2>
           <Button onClick={flipCard} variant={flip? "danger" : "primary"}>Flip</Button>
         </Col>
-        <Col>
+        <Col sm={8}>
           {flip && card.description.split("\n").map( (sentence, index) => 
             <div key={index}>{sentence}</div>
           )}
