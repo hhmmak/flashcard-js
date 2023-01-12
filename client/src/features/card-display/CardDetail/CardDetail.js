@@ -14,18 +14,20 @@ const CardDetail = ({card}) => {
   }
 
   return (
-    <Row className={styles.container}>
-        <Col>
-          <p>{card.type}</p>
-          <h2>{card.word}</h2>
-          <Button onClick={flipCard} variant={flip? "danger" : "primary"}>Flip</Button>
-        </Col>
-        <Col sm={8}>
-          {flip && card.description.split("\n").map( (sentence, index) => 
-            <div key={index}>{sentence}</div>
-          )}
-        </Col>
-    </Row>
+    <div className={styles.container}>
+        <Row>
+          <Col>
+            <p>{card.type}</p>
+            <h2>{card.word}</h2>
+            <Button onClick={flipCard} variant={flip? "danger" : "primary"}>Flip</Button>
+          </Col>
+          <Col sm={7}>
+            {flip && card.description.split("\n").map( (sentence, index) =>
+              <div key={index}>{sentence}</div>
+            )}
+          </Col>
+        </Row>
+    </div>
   )
 }
 export default CardDetail;
