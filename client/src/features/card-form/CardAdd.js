@@ -24,9 +24,7 @@ const CardAdd = () => {
   }
 
   return (
-    <div>
-      <CardForm card={card} setCard={setCard} submitHandler={editSubmit}/>
-    </div>
+    <CardForm card={card} setCard={setCard} submitHandler={editSubmit}/>
   )
 }
 export default CardAdd;

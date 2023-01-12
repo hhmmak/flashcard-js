@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import CardForm from "./CardForm"
+import CardForm from "./CardForm";
 
 const CardEdit = ({id}) => {
 
@@ -36,11 +36,10 @@ const CardEdit = ({id}) => {
   return (
   <>
     { loaded &&
-      <div>
-        <CardForm card={card} setCard={setCard} submitHandler={editSubmit}/>
-      </div>
+      <CardForm card={card} setCard={setCard} submitHandler={editSubmit}/>
     }
   </>
   )
+
 }
 export default CardEdit
