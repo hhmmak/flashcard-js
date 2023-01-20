@@ -26,8 +26,8 @@ const CardSet = () => {
         <Container>
           <Row>
           { cards.map( (card, index) =>
-            <Col lg={6}>
-              <CardDetail key={index} card={card}/>
+            <Col lg={6} key={index}>
+              <CardDetail card={card}/>
             </Col>
           )}
           </Row>
