@@ -18,7 +18,7 @@ const CardAdd = () => {
     axios.post(`http://localhost:5000/api/flashcard`, newCard)
       .then( res => {
         console.log(res);
-        navigate('/card');
+        navigate('/');
       })
       .catch(err => console.log(err));
   }
