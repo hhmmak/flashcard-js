@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // import styles from './CardDetail.module.css';
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col'
 
@@ -21,8 +21,8 @@ const CardDetail = ({card}) => {
         <div className="col-span-2">
           <p className="text-emerald-600">{card.type}</p>
           <h2>{card.word}</h2>
-          <Button onClick={flipCard} variant={flip? "danger" : "primary"}>Flip</Button>
-          <Button onClick={() => navigate(`/edit`, {state: {id : card._id}})}>Edit</Button>
+          <button onClick={flipCard} className={`border rounded ${ flip ? 'bg-amber-700' : 'bg-cyan-600'} text-white px-3 py-1`}>Flip</button>
+          <button onClick={() => navigate(`/edit`, {state: {id : card._id}})} className={`border rounded bg-cyan-600 text-white px-3 py-1`}>Edit</button>
         </div>
         <div className="col-span-3">
           {flip && card.description.split("\n").map( (sentence, index) =>
